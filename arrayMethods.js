@@ -63,12 +63,12 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-const totalPopulation = populations.reduce((runningTotal, curElement) =>  {
-  runningTotal = runningTotal + curElement;
-  return runningTotal;
-});
+// const totalPopulation = populations.reduce((runningTotal, curElement) =>  {
+//   runningTotal = runningTotal + curElement;
+//   return runningTotal;
+// });
 
-console.log(totalPopulation);
+// console.log(totalPopulation);
 
 
 
@@ -93,9 +93,13 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-// const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+const myStrongest = monstersInYourPocket.filter((monObj) =>  {
+  overTwo = monObj.CP > 200;
 
+  return overTwo;
+})
 
+console.log(myStrongest);
 
 ////////// PROBLEM 5 //////////
 
