@@ -7,6 +7,24 @@
 
 // CODE HERE
 
+function multiply(num1, num2, calBack)  {
+
+  function calBack(num1, num2) {
+    console.log( num1 * num2)
+  }
+  return calBack(num1, num2)
+}
+
+
+
+multiply(4,3);
+
+// const multiply = (num1, num2, calBack) => calBack(num1 * num2)
+
+// console.log(multiply(4,3, calBack()))
+// multiply(4, 3, answer => {
+//   console.log('The answer is ' + answer) //should console.log 12
+// })
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -105,29 +123,29 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 // CODE HERE
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
-function uniq(arr, cb){
-// console.log(arr)
+// function uniq(arr, cb){
+// // console.log(arr)
 
-  for (let i = 0; i < arr.length; i++){
-    for(let j = arr.length - 1; j > i; j--){
+//   for (let i = 0; i < arr.length; i++){
+//     for(let j = arr.length - 1; j > i; j--){
 
-      if(arr[i] === arr[j]) {
-        arr.splice(j, 1)
-      }
+//       if(arr[i] === arr[j]) {
+//         arr.splice(j, 1)
+//       }
 
-    }
-  }
+//     }
+//   }
 
-  cb(arr)
-}
+//   cb(arr)
+// }
 
 
-function printIt(arr) {
-  console.log('New Array: ')
-  console.log(arr);
-}
+// function printIt(arr) {
+//   console.log('New Array: ')
+//   console.log(arr);
+// }
 
-uniq(names, printIt)
+// uniq(names, printIt)
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
