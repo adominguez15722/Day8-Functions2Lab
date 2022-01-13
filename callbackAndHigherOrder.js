@@ -7,17 +7,17 @@
 
 // CODE HERE
 
-// function multiply(num1, num2, calBack)  {
+// function multiply(num1, num2, cb)  {
 
-//   function calBack(num1, num2) {
-//     console.log(num1 * num2)
+//   function cb(num1, num2) {
+//     return  num1 * num2
 //   }
-//   return calBack(num1, num2)
+//   return cb(num1, num2)
 // }
 
 
 
-// multiply(4,3);
+
 
 // const multiply = (num1, num2, calBack) => calBack(num1 * num2)
 
@@ -77,15 +77,15 @@ const first = (arr, cb) => cb(arr[0])
 
 // CODE HERE
 
-const last = (arr, cb) => cb(arr[arr.length - 1]);
+// const last = (arr, cb) => cb(arr[arr.length - 1]);
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-last(names, lastName => {
-  console.log('The last name in names is ' + lastName)
-})
+// last(names, lastName => {
+//   console.log('The last name in names is ' + lastName)
+// })
 
 
 
@@ -100,18 +100,27 @@ last(names, lastName => {
 
 // CODE HERE 
 
+const contains = (arr, name1, cb) => {
+  if(arr.includes(name1)){
+          cb(true)
+        } else{
+          cb(false)
+        };
+};
+
+
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// contains(names, 'Colt', result => {
-//   if(result === true){
-//     console.log('Colt is in the array')
-//   } else {
-//     console.log('Colt is not in the array')
-//   }
-// })
+contains(names, 'Colt', result => {
+  if(result === true){
+    console.log('Colt is in the array')
+  } else {
+    console.log('Colt is not in the array')
+  }
+})
 
 
 
