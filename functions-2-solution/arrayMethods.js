@@ -18,10 +18,14 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 // CODE HERE
+const evenNumbers = mixedNumbers.filter(function(elem) {
+    return elem % 2 === 0
+})
 
-// const evenNumbers  = mixedNumbers.filter(eve => eve % 2 === 0);
+// with an arrow function
+const evenNumbers = mixedNumbers.filter(num => num % 2 === 0)
 
-// console.log(evenNumbers);
+
 
 ////////// PROBLEM 2 //////////
 
@@ -40,13 +44,12 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 // CODE HERE
-// const postTaxPrices = prices.map((arr) => {
-//   arr = arr * 1.07;
-//   return Number(arr.toFixed(2))
-// });
+const postTaxPrices = prices.map(function(elem) {
+    return elem * 1.07
+}) 
 
-// console.log(postTaxPrices);
-
+// with an arrow function
+const postTaxPrices = prices.map(num => num * 1.07)
 
 
 ////////// PROBLEM 3 //////////
@@ -63,12 +66,12 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-// const totalPopulation = populations.reduce((runningTotal, curElement) =>  {
-//   runningTotal = runningTotal + curElement;
-//   return runningTotal;
-// });
+const totalPopulation = populations.reduce(function(acc, elem) {
+    return acc + elem
+})
 
-// console.log(totalPopulation);
+// with an arrow function
+const totalPopulation = populations.reduce((a, c) => a + c)
 
 
 
@@ -93,13 +96,14 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-// const myStrongest = monstersInYourPocket.filter((monObj) =>  {
-//   overTwo = monObj.CP > 200;
+const myStrongest = monstersInYourPocket.filter(function(elem) {
+    // could have used bracket notation
+    // return elem["CP"] > 200
+    return elem.CP > 200
+})
 
-//   return overTwo;
-// })
-
-// console.log(myStrongest);
+// with an arrow function
+const myStrongest = monstersInYourPocket.filter(monster => monster.CP > 200)
 
 ////////// PROBLEM 5 //////////
 
@@ -115,37 +119,15 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 // CODE HERE
+const orderTotals = orders.map(function(elem) {
+    // could have used bracket notation
+    // return elem["price"] + (elem["price"] * elem["tax"])
+    return elem.price + (elem.price * elem.tax)
+  })
 
-// const orderTotals = orders.map(function(elem) {
-//   // could have used bracket notation
-//   // return elem["price"] + (elem["price"] * elem["tax"])
-//   return elem.price + (elem.price * elem.tax)
-// })
+// with an arrow function
+const orderTotals = orders.map(order => order.price + (order.price * order.tax))
 
-// console.log(orderTotals);
-
-// // with an arrow function
-// const orderTotals = orders.map(order => order.price + (order.price * order.tax))
-
-
-
-
-
-
-
-
-
-
-
-// const taxed = (num1, num2) => {(num1 * num2) + num1};
-
-// const orderTotal = orders.map((el) => {
-//   const total = taxed(el.price, el.tax)
-//   el.total = total;
-//   return el;
-// });
-
-// console.log(orderTotal);
 
 
 ////////// PROBLEM 6 //////////
@@ -164,10 +146,15 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method(s) to create to get the sum of bobsTotal.
 */
 
-// CODE HERE
+// you could have also used bracket notation in this problem
 
+const bobsTotal = purchases.filter(function(elem) {
+    return elem.owner === "Bob"
+}).reduce(function(acc,elem) {
+    return acc + elem.price
+}, 0)
+
+// with an arrow function 
 const bobsTotal = purchases
-.filter(ele => ele.owner === 'Bob')
-.reduce((acc, ele) => acc + ele.price, 0);
-
-console.log(bobsTotal);
+    .filter(purchase => purchase.owner === "Bob")
+    .reduce((a, c) => a + c.price, 0)
