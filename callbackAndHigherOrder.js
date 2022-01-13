@@ -62,9 +62,9 @@ const first = (arr, cb) => cb(arr[0])
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-first(names, firstName => {
-  console.log('The first name in names is ' + firstName)
-})
+// first(names, firstName => {
+//   console.log('The first name in names is ' + firstName)
+// })
 
 
 
@@ -77,14 +77,15 @@ first(names, firstName => {
 
 // CODE HERE
 
+const last = (arr, cb) => cb(arr[arr.length - 1]);
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// last(names, lastName => {
-//   console.log('The last name in names is ' + lastName)
-// })
+last(names, lastName => {
+  console.log('The last name in names is ' + lastName)
+})
 
 
 
