@@ -170,7 +170,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
 // CODE HERE 
 
-const each = (arr, cb) => arr.forEach((ele, ind) => cb(ele, ind));
+// const each = (arr, cb) => arr.forEach((ele, ind) => cb(ele, ind));
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -181,7 +181,7 @@ const each = (arr, cb) => arr.forEach((ele, ind) => cb(ele, ind));
 
 // CODE HERE
 
-each(names, (item, index) => `The item at index ${index} is ${item}`)
+// each(names, (item, index) => `The item at index ${index} is ${item}`)
 
 ////////// PROBLEM 7 //////////
 
@@ -215,6 +215,13 @@ var users = [
 
 // CODE HERE 
 
+// const getUserById = (arr, id, cb) => {
+//   for(let i = 0; i < arr.length; i++) {
+//     if(arr[i].id === id) {
+//       cb(arr[i])
+//     }
+//   }
+// }
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -242,6 +249,13 @@ var users = [
 
 // CODE HERE
 
+function addingFactory(num1)  {
+ return function funcTwo(num2){
+   return (num1 + num2)
+ }
+}
+
+// const addingFactory = (num1) => funcTwo = (num2) => num1 + num2;
 /*
   Now that you have addingFactory, you can create other
   functions from it. 
@@ -256,6 +270,8 @@ var users = [
 
 // CODE HERE
 
+let addTen = addingFactory(10); 
+
 /*
   Now the inner function is stored in the addTen variable! 
 
@@ -267,6 +283,8 @@ var users = [
 */
 
 // CODE HERE
+
+console.log(addTen(3))
 
 /*
   Let's make another function from the addingFactory. 
@@ -280,3 +298,7 @@ var users = [
 */
 
 // CODE HERE
+
+let addNUMBER = addingFactory(12);
+
+console.log(addNUMBER(20));
