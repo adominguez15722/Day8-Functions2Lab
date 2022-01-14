@@ -9,10 +9,8 @@
 
 // function multiply(num1, num2, cb)  {
 
-//   function cb(num1, num2) {
-//     return  num1 * num2
-//   }
-//   return cb(num1, num2)
+//   cb(num1 * num2) 
+
 // }
 
 
@@ -100,13 +98,13 @@ const first = (arr, cb) => cb(arr[0])
 
 // CODE HERE 
 
-const contains = (arr, name1, cb) => {
-  if(arr.includes(name1)){
-          cb(true)
-        } else{
-          cb(false)
-        };
-};
+// const contains = (arr, name1, cb) => {
+//   if(arr.includes(name1)){
+//      cb(true)
+//   } else{
+//      cb(false)
+//         };
+// };
 
 
 
@@ -114,13 +112,13 @@ const contains = (arr, name1, cb) => {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-contains(names, 'Colt', result => {
-  if(result === true){
-    console.log('Colt is in the array')
-  } else {
-    console.log('Colt is not in the array')
-  }
-})
+// contains(names, 'Colt', result => {
+//   if(result === true){
+//     console.log('Colt is in the array')
+//   } else {
+//     console.log('Colt is not in the array')
+//   }
+// })
 
 
 
@@ -135,29 +133,19 @@ contains(names, 'Colt', result => {
 // CODE HERE
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
-// function uniq(arr, cb){
-// // console.log(arr)
+const uniq = (arr, cb) => {
+  for(let i = 0; i < arr.length; i++) {
+    for(let j = arr.length - 1; j > i; j--)  {
+      if(arr[i] === arr[j]) {
+        arr.splice(j, 1)
+      } 
+    }
+  }
+  cb(arr)
+}
+const newNames = () => console.log(names);
 
-//   for (let i = 0; i < arr.length; i++){
-//     for(let j = arr.length - 1; j > i; j--){
-
-//       if(arr[i] === arr[j]) {
-//         arr.splice(j, 1)
-//       }
-
-//     }
-//   }
-
-//   cb(arr)
-// }
-
-
-// function printIt(arr) {
-//   console.log('New Array: ')
-//   console.log(arr);
-// }
-
-// uniq(names, printIt)
+uniq(names, newNames);
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -167,7 +155,9 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
 // CODE HERE
 
-
+uniq(names, (uniqArr) => {
+  console.log(`The new names array with all the duplicate items removed is ${uniqArr}`)
+});
 
 
 
