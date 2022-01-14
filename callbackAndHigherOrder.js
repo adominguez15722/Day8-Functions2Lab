@@ -133,19 +133,19 @@ const first = (arr, cb) => cb(arr[0])
 // CODE HERE
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
-const uniq = (arr, cb) => {
-  for(let i = 0; i < arr.length; i++) {
-    for(let j = arr.length - 1; j > i; j--)  {
-      if(arr[i] === arr[j]) {
-        arr.splice(j, 1)
-      } 
-    }
-  }
-  cb(arr)
-}
-const newNames = () => console.log(names);
+// const uniq = (arr, cb) => {
+//   for(let i = 0; i < arr.length; i++) {
+//     for(let j = arr.length - 1; j > i; j--)  {
+//       if(arr[i] === arr[j]) {
+//         arr.splice(j, 1)
+//       } 
+//     }
+//   }
+//   cb(arr)
+// }
+// const newNames = () => console.log(names);
 
-uniq(names, newNames);
+// uniq(names, newNames);
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -155,9 +155,9 @@ uniq(names, newNames);
 
 // CODE HERE
 
-uniq(names, (uniqArr) => {
-  console.log(`The new names array with all the duplicate items removed is ${uniqArr}`)
-});
+// uniq(names, (uniqArr) => {
+//   console.log(`The new names array with all the duplicate items removed is ${uniqArr}`)
+// });
 
 
 
@@ -170,6 +170,7 @@ uniq(names, (uniqArr) => {
 
 // CODE HERE 
 
+const each = (arr, cb) => arr.forEach((ele, ind) => cb(ele, ind));
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -180,6 +181,7 @@ uniq(names, (uniqArr) => {
 
 // CODE HERE
 
+each(names, (item, index) => `The item at index ${index} is ${item}`)
 
 ////////// PROBLEM 7 //////////
 
